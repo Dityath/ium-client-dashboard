@@ -25,6 +25,11 @@ const Sidebar = () => {
             <ListIcon as={AttachmentIcon} boxSize={5} />
             <Link href="/record">Pembayaran Bulanan</Link>
           </ListItem>
+          <ListItem display="flex" alignItems="center">
+            <Link href="https://nurul-qolbi.vercel.app/" passHref>
+              Keluar
+            </Link>
+          </ListItem>
         </List>
       </Box>
     </Box>
