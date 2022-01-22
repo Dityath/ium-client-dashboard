@@ -8,10 +8,13 @@ import {
   InputRightElement,
   Button,
 } from "@chakra-ui/react";
+
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
+  const router = useRouter();
 
   return (
     <Center backgroundColor="orange.100" w="100%" h="100vh">
@@ -22,6 +25,9 @@ function Login() {
         borderRadius="2xl"
         boxShadow="lg"
         padding="5"
+        display="flex"
+        flexDir="column"
+        gridGap="2"
       >
         <Heading as="h1" size="xl">
           Login
@@ -48,12 +54,22 @@ function Login() {
               h="1.75rem"
               size="sm"
               onClick={() => setShowPass(!showPass)}
+              _focus={{
+                boxShadow: "0 0 1px 2px #F56565, 0 1px 1px #F56565",
+              }}
             >
               {showPass ? "Hide" : "Show"}
             </Button>
           </InputRightElement>
         </InputGroup>
-        <Button type="submit" w="80">
+        <Button
+          type="submit"
+          w="80"
+          _focus={{
+            boxShadow: "0 0 1px 2px #F56565, 0 1px 1px #F56565",
+          }}
+          onClick={() => router.push("/")}
+        >
           Masuk
         </Button>
       </Container>
