@@ -8,10 +8,13 @@ import {
   InputRightElement,
   Button,
 } from "@chakra-ui/react";
+
 import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 function Login() {
   const [showPass, setShowPass] = useState(false);
+  const router = useRouter();
 
   return (
     <Center backgroundColor="orange.100" w="100%" h="100vh">
@@ -65,6 +68,7 @@ function Login() {
           _focus={{
             boxShadow: "0 0 1px 2px #F56565, 0 1px 1px #F56565",
           }}
+          onClick={() => router.push("/")}
         >
           Masuk
         </Button>
